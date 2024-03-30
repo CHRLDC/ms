@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Achats en ligne de vêtements, chaussures et équipements pour hommes. Qualité, confort et performance pour vos activités intérieures et extérieures. Découvrez nos meilleurs offres sur notre nouvelle gamme @utdoor! ">
+    <!--Librairie leaflet pour la carte-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/ico" href="./favicon.ico">
+    <title>Boutique de vêtements, chaussures et équipements sportifs pour hommes.</title>
+</head>
+
+<body>
+
+    <!--HEADER-->
+    <header class="flex justify-between align-center">
+        <div>
+            <a href="./index.html" title="Acceuil du site"><img src="./assets/imagesSIte/logo-blanc.png"
+                    alt="Logo du site M'S"></a>
+        </div>
+        <nav class="d-none-medium">
+            <ul class="flex gap20">
+                <li><a href="./index.html" title="Vers acceuil">Accueil</a></li>
+                <li><a href="./chaussures.html" title="Vers page chaussures">Chaussures</a></li>
+                <li><a href="./vetements.html" title="Vers page vêtements">Vêtements</a></li>
+                <li><a href="./accessoires.html" title="Vers page accessoires">Accessoires</a></li>
+                <li><a href="#outdoor" title="Vers page Outdoor" class="utdoor-btn">@utdoor</a></li>
+            </ul>
+        </nav>
+        <div class="header-right flex gap20 d-none-medium align-center">
+            <div>
+                <a href="./panier.html" title="Vers panier"> <img src="./assets/imagesSIte/header-pannier.png"
+                        alt="Panier"></a>
+            </div>
+            <div>
+                <a href="./compte.html" title="Vers compte"><img src="./assets/imagesSIte/header-account.png"
+                        alt=""></a>
+            </div>
+            <button title="Lire avec la police luciole" id="btn-acc" class="btn-acc">Ajuster la lisibilité</button>
+        </div>
+        <!--MENU BURGER-->
+        <div id="burger-menu" class="burger-menu d-none">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div id="fenetre-menu" class="fenetre-menu d-none">
+            <nav>
+                <ul>
+                    <li><a href="./index.html" title="Vers acceuil">Accueil</a></li>
+                    <li><a href="./chaussures.html" title="Vers page chaussures">Chaussures</a></li>
+                    <li><a href="./vetements.html" title="Vers page vêtements">Vêtements</a></li>
+                    <li><a href="./accessoires.html" title="Vers page accessoires">Accessoires</a></li>
+                    <li><a href="#outdoor" title="Vers page Outdoor" class="utdoor-btn">@utdoor</a></li>
+                </ul>
+                <div class="flex gap30 align-center justify-center pT50">
+                    <a href="./panier.html" title="Vers panier"><img src="./assets/imagesSIte/header-pannier.png"
+                            alt="Panier"></a>
+                    <a href="./compte.html" title="Vers compte"><img src="./assets/imagesSIte/header-account.png"
+                            alt=""></a>
+                </div>
+                <div class="flex justify-center pT50">
+                    <button title="Lire avec la police luciole" id="btn-acc2" class="btn-acc ">Lire en police
+                        accessible</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BANNER -->
+    <div class="header-fantome"></div>
+    <section id="acceuil" class="bg-banner flex align-center justify-center ">
+        <div class="w30 flex direction-column gap30 mL-300">
+            <h3>Ne cherchez plus <br> chaussures à votre pied</h3>
+            <h2>Découvrez notre toute nouvelle gamme <br> de bacskets M'S déclinée en 4 coloris</h2>
+            <div>
+                <a href="./chaussures" title="Vers page chaussures" class="btn">Découvrir la gamme</a>
+            </div>
+        </div>
+    </section>
+    <main>
+        <!-- CATEGORIES -->
+        <section class="container-1200 pB150 pB50-small">
+            <h4 class="mB20 pT50">Nos produits par catégories</h4>
+            <div class="flex justify-between space-evenly-medium gap20-medium">
+                <!--CARD CHAUSSURES-->
+                <article class="card-categorie mB50-small w100-small">
+                    <h5 class="texte-center">CHAUSSURES</h5>
+                    <div>
+                        <img class="mB10" src="./assets/imagesSIte/categorie-chaussures.jpg" alt="Photo d'un jogger">
+                    </div>
+                    <p class="mB20">Baskets, Chaussures de montagnes, Chaussures hautes, chaussures basses, ... partez
+                        bien
+                        équipés</p>
+                    <a class="btn-white" href="./chaussures.html" title="Vers page chaussures">Voir les modèles de
+                        chaussures</a>
+                </article>
+                <!--CARD ACCESSOIRES-->
+                <article class="card-categorie mB50-small w100-small">
+                    <h5 class="texte-center">ACCESSOIRES</h5>
+                    <div>
+                        <img class="mB10" src="./assets/imagesSIte/categorie-accessoires.jpg" alt="Photo d'un jogger">
+                    </div>
+                    <p class="mB20">Sac à dos de randonnées, toiles de tente, réchauds, matériel de sport interieur et
+                        exterieur</p>
+                    <a class="btn-white" href="./accessoires.html" title="Vers page accessoires">Voir les
+                        accessoires</a>
+                </article>
+                <!--CARD VETEMENTS-->
+                <article class="card-categorie w100-small">
+                    <h5 class="texte-center">VÊTEMENTS</h5>
+                    <div>
+                        <img class="mB10" src="./assets/imagesSIte/categorie-vetements.jpg" alt="Photo d'un jogger">
+                    </div>
+                    <p class="mB20">Vêtements tous sports, jogging, shorts, tee-shirts , hoodies, vestes, chaussettes et
+                        débardeurs</p>
+                    <a class="btn-white" href="./vetements.html" title="Vers page vêtements">Voir les modèles de
+                        vêtements</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- @UTDOOR -->
+        <section id="outdoor">
+            <div class="bg-outdoor">
+                <div class="container-1200  flex direction-column gap20 pT150">
+                    <h4>Découvrez notre gamme @utdoor</h4>
+                    <p>Une sélection parmis les vêtements techniques de notre fabrication <br> ainsi que des meilleures
+                        marques
+                        sur
+                        le
+                        marché</p>
+                    <div>
+                        <a class="btn-white" href="./outdoor.html" title="Vers page Outdoor">Voir les articles de la
+                            gamme
+                            @utdoor</a>
+                    </div>
+                </div>
+            </div>
+            <!-- CARD NOUVEAUTE -->
+            <div class="container-1200 container-none-medium">
+                <article class="card-new flex justify-between align-center w100-small">
+                    <div class="w40 w100-medium">
+                        <img src="./assets/imagesSIte/outdoor6.jpg" alt="Photo d'un t-shirt">
+                    </div>
+                    <div class="text-new w100-medium mB20">
+                        <div class="flex justify-between align-center">
+                            <h6>NOUVEAUTÉ</h6>
+                            <p class="price">40€</p>
+                        </div>
+                        <p class="mB20">Tee shirt technique rando+ , résistant , confortable, <br> tissus déperlant
+                        </p>
+                        <ul class="mL30 mB50">
+                            <li>Respirabilité</li>
+                            <li>Imperméabilité</li>
+                            <li>Anti odeurs</li>
+                        </ul>
+                        <div class="texte-center">
+                            <a href="./article.html" title="Vers la page du produit" class="btn-detail">Voir le détail
+                                du produit</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+        </section>
+
+        <!-- OFFRE -->
+        <section class="offre container-1200 flex justify-between align-center pT150 pB100 pT30-medium">
+            <div class="flex direction-column gap20">
+                <h4>Profitez de l'offre</h4>
+                <p><strong>L’ensembe jogging M’S noir <br>
+                        disponible en plusieurs tailles</strong></p>
+                <p>Ce jogging alie confort légereté et douceur, pour du sport <br> a l’exterieur comme pour les moments
+                    de
+                    détente a la <br> maison</p>
+                <div>
+                    <a class="btn-white" href="./article.html" title="Vers la page du produit">Voir le détail du
+                        produit</a>
+                </div>
+            </div>
+            <div class="w50 w100-medium">
+                <img src="./assets/imagesSIte/Joogin-promo.jpg" alt="Photo d'un jogging">
+            </div>
+        </section>
+
+        <!-- MARQUES -->
+        <section class="marques pB30 pT30">
+            <div class="container-1200">
+                <h4>Ces marques nous font confiance</h4>
+                <div class="flex justify-between align-center column-medium">
+                    <div class="pT10">
+                        <img src="./assets/imagesSIte/the-north-face.png" alt="Logo de the north face">
+                    </div>
+                    <div>
+                        <img src="./assets/imagesSIte/puma.png" alt="logo de puma">
+                    </div>
+                    <div>
+                        <img src="./assets/imagesSIte/adidas.png" alt="logo d'addidas">
+                    </div>
+                    <div>
+                        <img src="./assets/imagesSIte/nike.png" alt="logo de nike">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUI SOMMES NOUS -->
+        <section class="container-1200 flex justify-between pT150 gap20-medium pT30-medium">
+            <div class="w50 w100-medium">
+                <h1 class="mB20">Boutique en ligne de vêtements, chaussures et équipements
+                    de sport pour hommes.</h1>
+                <p>
+                    <strong>M’S</strong> est une <strong>boutique</strong> fondée en 1993 spécialisée dans les vêtements
+                    , chaussures et équipements
+                    divers de
+                    sports pour hommes. Notre objectif est de vous fournir le <strong>meilleur pour la pratique de vos
+                        activités
+                        sportives en intérieur comme en extérieur</strong>. Nous travaillons avec les plus grandes
+                    marques
+                    et nous
+                    disposons de nos propres ateliers de fabrication. Parmi les nouveautés issues de notre pole
+                    recherche et
+                    développement, les produits de la <strong>gamme @utdoor</strong> pour les activités de plein air,
+                    qui
+                    allient <strong>confort</strong>,
+                    <strong>respirabilité</strong> et <strong>protection</strong> grâce a nos matériaux à la pointe de
+                    la
+                    technologie textile.
+                </p>
+            </div>
+            <div class="w40 w100-medium">
+                <img src="./assets/imagesSIte/qui-sommes-nous.jpg" alt="photo d'un jogger super cool">
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact"
+            class="container-1200 flex justify-between justify-center-medium pT150 align-center pB100 pT30-medium">
+            <div class="w100-medium d-none-medium w50">
+                <img src="./assets/imagesSIte/illustration-boxe.jpg" alt="Photo d'un boxer">
+            </div>
+            <div>
+                <div class="flex direction-column gap20">
+                    <h4>Contactez-nous</h4>
+                    <p>Pour des informations sur nos produits, pour toute demande de <br> renseignement ou pour nous
+                        faire
+                        remonter un problème techique sur <br> le site , merci de remplir le formulaire suivant</p>
+                    <form class="w100" method="GET" id="form">
+                        <div class="flex justify-between mB20">
+                            <!--Nom:-->
+                            <div class="w50 w100-medium mB20-medium">
+                                <label for="nom">Votre nom</label>
+                                <input type="text" id="nom" name="nom">
+                                <p class="p-error d-none mB5" id="error-nom">Error</p>
+                            </div>
+                            <!--Prénom:-->
+                            <div class="w50 w100-medium">
+                                <label for="prenom">Votre prénom</label>
+                                <input type="text" id="prenom" name="prenom">
+                                <p class="p-error d-none mB5" id="error-prenom">Error</p>
+                            </div>
+                        </div>
+                        <!--Adresse de messagerie:-->
+                        <div class="mB20">
+                            <label for="email">Votre adresse de messagerie</label>
+                            <input type="email" id="email" name="email" placeholder="exemple@email.fr">
+                            <p class="p-error d-none mB5" id="error-email">Error</p>
+                        </div>
+                        <!--Objet:-->
+                        <div class="mB20">
+                            <label for="objet">Objet</label>
+                            <select id="objet" name="objet">
+                                <option value="">Choisir</option>
+                                <option value="option1">Demande d’informations générales</option>
+                                <option value="option2">Signaler un problème sur le site</option>
+                                <option value="option3">Demande d’information sur un produit</option>
+                                <option value="option4">Signaler un problème sur un produit</option>
+                            </select>
+                            <p class="p-error d-none mB5" id="error-objet">Error</p>
+                        </div>
+                        <!--Référence si demande sur produit:-->
+                        <div id="zone-ref" class="d-none mB20">
+                            <label for="reference">Référence</label>
+                            <input type="text" id="reference" name="reference" placeholder="xxx-123456">
+                            <p class="p-error d-none" id="error-reference">Error</p>
+                        </div>
+                        <!--Message:-->
+                        <div class="mB20">
+                            <label for="message">Votre message</label>
+                            <textarea id="message" name="message"></textarea>
+                            <p class="p-error d-none mB5" id="error-message">Error</p>
+                        </div>
+                        <div>
+                            <input id="envoi" class="btn" type="submit" value="Envoyer votre message">
+                            <p id="msg-check" class="d-none">Votre message est bien envoyé ! (cette page va
+                                s'actualiser)</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--FOOTER-->
+    <footer class="flex direction-column justify-between align-center gap20 pT30-medium">
+        <div>
+            <img src="./assets/imagesSIte/logo-blanc.png" alt="Logo du site">
+        </div>
+        <h5 class="mB20">Retrouvez nos boutiques près de chez vous</h5>
+        <div id="map"></div>
+        <div class="container-1200 flex justify-between pT50">
+            <div>
+                <h5 class="mB20"><strong>Plan du site</strong></h5>
+                <nav>
+                    <ul>
+                        <li><a href="#acceuil" title="Vers acceuil">Acceuil</a></li>
+                        <li><a href="#accessoire" title="Vers acceuil">Accessoire</a></li>
+                        <li><a href="#vetement" title="Vers vêtements">Vêtements</a></li>
+                        <li><a href="./chaussures.html" title="Vers chaussures">Chaussures</a></li>
+                        <li><a href="#outdoor" title="Vers outdoor">@utdoor</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <h5 class="mB20 pT30-medium"><strong>Horaires douverture de nos boutiques</strong></h5>
+                <p>Du lundi au vendredi de 10h à 12h30 puis de 13h30 à 19h</p>
+                <p>Le samedi de 9h à 18h30 non stop</p>
+            </div>
+            <div>
+                <h5 class="mB20 pT30-medium"><strong>Retrouvez-nous sur les réseaux sociaux</strong></h5>
+                <div class="flex gap20">
+                    <a href="https://twitter.com/" title="vers site X"><img src="./assets/imagesSIte/twitterx.png"
+                            alt="Logo de X"></a>
+                    <a href="https://www.facebook.com/" title="vers site facebook"><img
+                            src="./assets/imagesSIte/Facebook.png" alt="Logo de facebook"></a>
+                    <a href="https://www.tiktok.com" title="vers site tik-tok"><img src="./assets/imagesSIte/TikTok.png"
+                            alt="Logo de TikTok"></a>
+                    <a href="https://www.instagram.com/" title="vers site instragram"><img
+                            src="./assets/imagesSIte/Instagram.png" alt="Logo d'instagram"></a>
+                </div>
+            </div>
+        </div>
+        <div class="texte-center pT30">
+            <p><a href="" title="vers page mention légales"><strong class="btn-detail">Mentions légales</strong></a> du
+                site - ©2024 créé
+                par Charles DC</p>
+        </div>
+    </footer>
+    <!--Lien Leaflet-->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Lien Java Script -->
+    <script src="./index.js" defer></script>
+    <script src="./app.js" defer></script>
+</body>
+
+</html>
